@@ -1,0 +1,869 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Cake Shop</title>
+    <!--bootstrap css-->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!--main css-->
+    <link rel="stylesheet" href="css/main.css">
+    <!--font awesome-->
+    <script src="js/all.js"></script> 
+</head>
+<body>
+    <header id="header">
+        <!--navbar-->
+        <nav class="navbar navbar-expand-lg mx-4">
+            <!--logo-->
+            <a href="#" class="navbar-brand">
+                <!-- 
+                    https://www.iconfinder.com/icons/2138186/baker_bakery_cupcake_dessert_food_icon
+                -->
+                <img src="images/logo.png" alt="main icon">
+            </a>
+             <!-- end of logo-->
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#myNavbar">
+                <span class="toggler-icon">
+                    <i class="fas fa-bars"></i>
+                 </span>
+            </button>
+            <div class="collapse navbar-collapse" id="myNavbar">
+                <!--menu-->
+                <ul class="navbar-nav text-capitalize mx-auto" id="menu">
+                     <li class="nav-item active">
+                        <a href="#header" class="nav-link">home</a>
+                    </li>
+                     <li class="nav-item">
+                        <a href="#about" class="nav-link">about</a>
+                    </li>
+                     <li class="nav-item">
+                        <a href="#store" class="nav-link">store</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#cakes" class="nav-link">order</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#blog" class="nav-link">blog</a>
+                    </li>
+                    <li class="nav-item" id="sm-cart">
+                        <a href="#" class="nav-link" data-toggle="modal" data-target="#cart-modal">cart</a>
+                    </li>
+                </ul>
+                <!--end of menu-->
+                <div class="nav-info-items d-none d-lg-flex">
+                    <!--phone info-->
+                    <div class="nav-info align-items-center d-flex justify-content-between mx-lg-5">
+                        <span class="nav-icon mx-lg-3">
+                            <i class="fas fa-phone"></i>
+                        </span>
+                        <p class="mb-0">+ 123 456 789</p>
+                    </div>
+                    <!--end of phone info-->
+                    <!--cart info-->
+                    <div id="cart-info" class="nav-info align-items-center d-flex justify-content-between mx-lg-5 cart-info">
+                        <span class="cart-info_icon mx-lg-3">
+                            <i class="fas fa-shopping-cart"></i>
+                        </span>
+                        <p class="mb-0 text-capitalize">
+                            <span id="item-count">2</span> items - $
+                            <span id="total"></span>10.9
+                        </p>
+    
+                         <!--cart-->
+                            <div class="cart" id="cart">
+                                <!--single cart item-->
+                                <div class="cart-item d-flex justify-content-between text-capitalize my-3">
+                                    <img src="images-cart/cake-1.jpg" alt="" class="img-fluid rounded-circle">
+                                    <div class="item-text">
+                                        <p id="cart-item-title" class="font-weight-bold mb-0">cart item</p>
+                                        <span>$</span>
+                                        <span id="cart-item-price" class="cart-item-price mb-0">10.99</span>
+                                    </div>
+                                    <a href="#" id="cart-item-remove" class="cart-item-remove">
+                                        <i class="fas fa-trash"></i>
+                                    </a>
+                                </div>
+                                <!--end of single cart item-->
+                                <!--single cart item-->
+                                <div class="cart-item d-flex justify-content-between text-capitalize my-3">
+                                    <img src="images-cart/cupcake-1.jpg" alt="" class="img-fluid rounded-circle">
+                                    <div class="item-text">
+                                        <p id="cart-item-title" class="font-weight-bold mb-0">cart item</p>
+                                        <span>$</span>
+                                        <span id="cart-item-price" class="cart-item-price mb-0">10.99</span>
+                                    </div>
+                                    <a href="#" id="cart-item-remove" class="cart-item-remove">
+                                        <i class="fas fa-trash"></i>
+                                    </a>
+                                </div>
+                                <!--end of single cart item-->
+                                <!--total price-->
+                                <div class="cart-total-container d-flex justify-content-around
+                                text-capitalize mt-5">
+                                    <h5> total </h5>
+                                    <h5> $ <strong id="cart-total" class="font-weight-bold"> 10.00 </strong></h5>
+                                </div>
+                                <!--end of total price-->
+                                <!--cart button-->
+                                <div class="cart-button-container mt-3 d-flex justify-content-between text-uppercase">
+                                    <a href="#" class="btn btn-black" id="clear-cart">clear cart
+                                    </a>
+                                    <a href="#" class="btn btn-pink" id="checkout">checkout
+                                    </a>
+                                </div>
+                                <!--end of cart button-->
+                            </div>
+                        <!--end of cart-->
+                    </div>
+                    <!--end of cart info-->
+                </div>
+            </div>
+        </nav>
+        <!--end of navbar-->
+        <!--banner-->
+        <div id="myCarousel" class="carousel slide" data-ride="carousel">
+            <!--carousel indicators-->
+            <ol class="carousel-indicators">
+                <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                <li data-target="#myCarousel" data-slide-to="1"></li>
+                <li data-target="#myCarousel" data-slide-to="2"></li>
+            </ol>
+            <!--carousel item-->
+            <div class="carousel-inner">
+                <div class="carousel-item max-height-1 active">
+                    <div class="col-10 mx-auto text-center banner">
+                        <h1 class="text-capitalize"> welcome to <strong class="banner-title">cake shop</strong></h1>
+                        <a href="#store" class="btn text-uppercase my-2 banner-link">explore</a>
+                    </div>
+                </div>
+                <div class="carousel-item  max-height-2">
+                    <div class="col-10 mx-auto text-center banner">
+                        <h1 class="text-capitalize"> welcome to <strong class="banner-title">cake shop</strong></h1>
+                        <a href="#store" class="btn text-uppercase my-2 banner-link">explore</a>
+                    </div>   
+                </div>
+                <div class="carousel-item max-height-3">
+                    <div class="col-10 mx-auto text-center banner">
+                        <h1 class="text-capitalize"> welcome to <strong class="banner-title">cake shop</strong></h1>
+                        <a href="#store" class="btn text-uppercase my-2 banner-link">explore</a>
+                    </div>
+                </div>
+            </div>
+            <!--carousel control-->
+            <a href="#myCarousel" data-slide="prev" class="carousel-control-prev">
+                <span class="carousel-control-prev-icon"></span>
+            </a>
+            <a href="#myCarousel" data-slide="next" class="carousel-control-next">
+                <span class="carousel-control-next-icon"></span>
+            </a>
+        </div>
+        <!--end of banner-->
+    </header>
+    <!--modal section-->
+    <div class="modal fade" id="cart-modal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title text-capitalize">first pay now</h4>
+                    <button type="button" class="close" data-dismiss="modal">&times</button>
+                </div>
+                <div class="modal-body">
+                    <!--cart-->
+                    <div class="form-cart" id="cart">
+                        <!--single cart item-->
+                        <div class="cart-item d-flex justify-content-between text-capitalize my-3">
+                            <img src="images-cart/cake-1.jpg" alt="" class="img-fluid rounded-circle">
+                            <div class="item-text">
+                                <p id="cart-item-title" class="font-weight-bold mb-0">cart item</p>
+                                <span>$</span>
+                                <span id="cart-item-price" class="cart-item-price mb-0">10.99</span>
+                            </div>
+                            <a href="#" id="cart-item-remove" class="cart-item-remove">
+                                <i class="fas fa-trash"></i>
+                            </a>
+                        </div>
+                        <!--end of single cart item-->
+                        <!--single cart item-->
+                        <div class="cart-item d-flex justify-content-between text-capitalize my-3">
+                            <img src="images-cart/cupcake-1.jpg" alt="" class="img-fluid rounded-circle">
+                            <div class="item-text">
+                                <p id="cart-item-title" class="font-weight-bold mb-0">cart item</p>
+                                <span>$</span>
+                                <span id="cart-item-price" class="cart-item-price mb-0">10.99</span>
+                            </div>
+                            <a href="#" id="cart-item-remove" class="cart-item-remove">
+                                <i class="fas fa-trash"></i>
+                            </a>
+                        </div>
+                        <!--end of single cart item-->
+                        <!--total price-->
+                        <div class="cart-total-container d-flex justify-content-around
+                        text-capitalize mt-5">
+                            <h5> total </h5>
+                            <h5> $ <strong id="cart-total" class="font-weight-bold"> 10.00 </strong></h5>
+                        </div>
+                        <!--end of total price-->
+                        <!--cart button-->
+                        <div class="cart-button-container mt-3 d-flex justify-content-between text-uppercase">
+                            <a href="#" class="btn btn-black" id="clear-cart">clear cart
+                            </a>
+                            <a href="#" class="btn btn-pink" id="checkout">checkout
+                            </a>
+                        </div>
+                        <!--end of cart button-->
+                    </div>
+                    <!--end of cart-->
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-pink" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--end of header-->
+    <!--about section-->
+<section class="about py-5" id="about">
+    <div class="container">
+        <div class="row">
+            <div class="col-10 col-md-6 mx-auto my-5">
+                <h1 class="text-capitalize"> about <strong class="banner-title"> us </strong></h1>
+                <p class="text-muted w-75 letter-space"> Lorem ipsum dolor sit amet consectetur, adipisicing elit. Id repellat debitis reiciendis unde nihil nostrum reprehenderit neque magnam dolor nulla. </p>
+                <div class="service-hour">
+                    <h6 class="text-uppercase">our opening time is</h6>
+                    <p class="mb-0 text-capitalize text-muted">09:00 - 12:00 <strong>sturday - thursday</strong></p>
+                    <p class="mb-0 text-capitalize text-muted">03:00 - 12:00 <strong>only friday</strong></p>
+                </div>
+                <a href="about-details.html" class="btn btn-black text-uppercase">more details</a>
+            </div>
+            <div class="col-10 col-md-6 mx-auto my-5 align-self-center">
+                <div class="about-image">
+                    <img src="images/sweet-1.jpg" class="img-fluid" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--end of about section-->
+<!--store section-->
+<section class="store py-5 bg-gray" id="store">
+    <div class="container">
+        <!--section title-->
+        <div class="row">
+            <div class="col-10 text-center mx-auto col-md-6">
+                <h1 class="text-capitalize"> our <strong class="banner-title"> store </strong></h1>
+            </div>
+        </div>
+        <!--end od section title-->
+        <!--filter button-->
+        <div class="row">
+            <div class="col-md-12">
+                <!--filter buttons-->
+                <div id="filters" class="button-group text-center">
+                    <button class="btn btn-black text-uppercase m-2 active" data-filter="*">all</button>
+                    <button class="btn btn-black text-uppercase m-2" data-filter=".cake">cake</button>
+                    <button class="btn btn-black text-uppercase m-2" data-filter=".cupcake">cupcake</button>
+                    <button class="btn btn-black text-uppercase m-2" data-filter=".sweet">sweet</button>
+                    <button class="btn btn-black text-uppercase m-2" data-filter=".doughnut">doughnut</button>
+                </div>
+                <!--end of filter buttons-->
+            </div>
+        </div>
+        <!--end os filter button-->
+        <!--search box-->
+        <div class="row col-10 mx-auto col-md-6">
+            <div class="input-group mt-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text search-box" id="search-icon">
+                        <i class="fas fa-search"></i>
+                    </span>
+                </div>
+                <input type="text" class="form-control" placeholder="items" id="search-item">
+            </div>
+        </div>
+        <!--end of search box-->
+        <!--store items-->
+        <div class="row">
+            <div class="col-md-12">
+                <div class="grid">
+                    <!--single items-->
+                    <div class="element-item col-12 col-md-6 col-lg-4 mx-auto my-3 cupcake">
+                        <div class="card single-item">
+                            <div class="img-container">
+                                <a href="product-details.html">
+                                    <img src="images/cupcake-1.jpg" class="card-img-top store-img" alt="">
+                                </a>
+                                <span class="store-item-icon">
+                                    <i class="fas fa-shopping-cart"></i>
+                                </span>
+                            </div>
+                            <div class="card-body">
+                                <div class="card-text text-capitalize d-flex justify-content-between">
+                                    <h5 class="store-item-name">cupcake item</h5>
+                                    <h5 class="store-item-value">$ <strong id="store-item-price" class="font-weight-bold">5</strong></h5>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--end of single items-->
+                    <!--single items-->
+                    <div class="element-item col-12 col-md-6 col-lg-4 mx-auto my-3 sweet">
+                        <div class="card single-item">
+                            <div class="img-container">
+                                <a href="product-details.html">
+                                    <img src="images/sweet-1.jpg" class="card-img-top store-img" alt="">
+                                </a>
+                                <span class="store-item-icon">
+                                    <i class="fas fa-shopping-cart"></i>
+                                </span>
+                            </div>
+                            <div class="card-body">
+                                <div class="card-text text-capitalize d-flex justify-content-between">
+                                    <h5 class="store-item-name">sweet item</h5>
+                                    <h5 class="store-item-value">$ <strong id="store-item-price" class="font-weight-bold">5</strong></h5>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--end of single items-->
+                    <!--single items-->
+                    <div class="element-item col-12 col-md-6 col-lg-4 mx-auto my-3 cake">
+                        <div class="card single-item">
+                            <div class="img-container">
+                                <a href="product-details.html">
+                                    <img src="images/cake-1.jpg" class="card-img-top store-img" alt="">
+                                </a>
+                                <span class="store-item-icon">
+                                    <i class="fas fa-shopping-cart"></i>
+                                </span>
+                            </div>
+                            <div class="card-body">
+                                <div class="card-text text-capitalize d-flex justify-content-between">
+                                    <h5 class="store-item-name">cake item</h5>
+                                    <h5 class="store-item-value">$ <strong id="store-item-price" class="font-weight-bold">5</strong></h5>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--end of single items-->
+                    <!--single items-->
+                    <div class="element-item col-12 col-md-6 col-lg-4 mx-auto my-3 doughnut">
+                        <div class="card single-item">
+                            <div class="img-container">
+                                <a href="product-details.html">
+                                    <img src="images/doughnut-1.jpg" class="card-img-top store-img" alt="">
+                                </a>
+                                <span class="store-item-icon">
+                                    <i class="fas fa-shopping-cart"></i>
+                                </span>
+                            </div>
+                            <div class="card-body">
+                                <div class="card-text text-capitalize d-flex justify-content-between">
+                                    <h5 class="store-item-name">doughnut item</h5>
+                                    <h5 class="store-item-value">$ <strong id="store-item-price" class="font-weight-bold">5</strong></h5>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--end of single items-->
+                    <!--single items-->
+                    <div class="element-item col-12 col-md-6 col-lg-4 mx-auto my-3 cupcake">
+                        <div class="card single-item">
+                            <div class="img-container">
+                                <a href="product-details.html">
+                                    <img src="images/cupcake-2.jpg" class="card-img-top store-img" alt="">
+                                </a>
+                                <span class="store-item-icon">
+                                    <i class="fas fa-shopping-cart"></i>
+                                </span>
+                            </div>
+                            <div class="card-body">
+                                <div class="card-text text-capitalize d-flex justify-content-between">
+                                    <h5 class="store-item-name">cupcake item</h5>
+                                    <h5 class="store-item-value">$ <strong id="store-item-price" class="font-weight-bold">10</strong></h5>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--end of single items-->
+                    <!--single items-->
+                    <div class="element-item col-12 col-md-6 col-lg-4 mx-auto my-3 sweet">
+                        <div class="card single-item">
+                            <div class="img-container">
+                                <a href="product-details.html">
+                                    <img src="images/sweet-2.jpg" class="card-img-top store-img" alt="">
+                                </a>
+                                <span class="store-item-icon">
+                                    <i class="fas fa-shopping-cart"></i>
+                                </span>
+                            </div>
+                            <div class="card-body">
+                                <div class="card-text text-capitalize d-flex justify-content-between">
+                                    <h5 class="store-item-name">sweet item</h5>
+                                    <h5 class="store-item-value">$ <strong id="store-item-price" class="font-weight-bold">10</strong></h5>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--end of single items-->
+                    <!--single items-->
+                    <div class="element-item col-12 col-md-6 col-lg-4 mx-auto my-3 cake">
+                        <div class="card single-item">
+                            <div class="img-container">
+                                <a href="product-details.html">
+                                    <img src="images/cake-2.jpg" class="card-img-top store-img" alt="">
+                                </a>
+                                <span class="store-item-icon">
+                                    <i class="fas fa-shopping-cart"></i>
+                                </span>
+                            </div>
+                            <div class="card-body">
+                                <div class="card-text text-capitalize d-flex justify-content-between">
+                                    <h5 class="store-item-name">cake item</h5>
+                                    <h5 class="store-item-value">$ <strong id="store-item-price" class="font-weight-bold">10</strong></h5>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--end of single items-->
+                    <!--single items-->
+                    <div class="element-item col-12 col-md-6 col-lg-4 mx-auto my-3 doughnut">
+                        <div class="card single-item">
+                            <div class="img-container">
+                                <a href="product-details.html">
+                                    <img src="images/doughnut-2.jpg" class="card-img-top store-img" alt="">
+                                </a>
+                                <span class="store-item-icon">
+                                    <i class="fas fa-shopping-cart"></i>
+                                </span>
+                            </div>
+                            <div class="card-body">
+                                <div class="card-text text-capitalize d-flex justify-content-between">
+                                    <h5 class="store-item-name">doughnut item</h5>
+                                    <h5 class="store-item-value">$ <strong id="store-item-price" class="font-weight-bold">10</strong></h5>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--end of single items-->
+                    <!--single items-->
+                    <div class="element-item col-12 col-md-6 col-lg-4 mx-auto my-3 cupcake">
+                        <div class="card single-item">
+                            <div class="img-container">
+                                <a href="product-details.html">
+                                    <img src="images/cupcake-3.jpg" class="card-img-top store-img" alt="">
+                                </a>
+                                <span class="store-item-icon">
+                                    <i class="fas fa-shopping-cart"></i>
+                                </span>
+                            </div>
+                            <div class="card-body">
+                                <div class="card-text text-capitalize d-flex justify-content-between">
+                                    <h5 class="store-item-name">cupcake item</h5>
+                                    <h5 class="store-item-value">$ <strong id="store-item-price" class="font-weight-bold">15</strong></h5>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--end of single items-->
+                    <!--single items-->
+                    <div class="element-item col-12 col-md-6 col-lg-4 mx-auto my-3 sweet">
+                        <div class="card single-item">
+                            <div class="img-container">
+                                <a href="product-details.html">
+                                    <img src="images/sweet-3.jpg" class="card-img-top store-img" alt="">
+                                </a>
+                                <span class="store-item-icon">
+                                    <i class="fas fa-shopping-cart"></i>
+                                </span>
+                            </div>
+                            <div class="card-body">
+                                <div class="card-text text-capitalize d-flex justify-content-between">
+                                    <h5 class="store-item-name">sweet item</h5>
+                                    <h5 class="store-item-value">$ <strong id="store-item-price" class="font-weight-bold">15</strong></h5>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--end of single items-->
+                    <!--single items-->
+                    <div class="element-item col-12 col-md-6 col-lg-4 mx-auto my-3 cake">
+                        <div class="card single-item">
+                            <div class="img-container">
+                                <a href="product-details.html">
+                                    <img src="images/cake-3.jpg" class="card-img-top store-img" alt="">
+                                </a>
+                                <span class="store-item-icon">
+                                    <i class="fas fa-shopping-cart"></i>
+                                </span>
+                            </div>
+                            <div class="card-body">
+                                <div class="card-text text-capitalize d-flex justify-content-between">
+                                    <h5 class="store-item-name">cake item</h5>
+                                    <h5 class="store-item-value">$ <strong id="store-item-price" class="font-weight-bold">15</strong></h5>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--end of single items-->
+                    <!--single items-->
+                    <div class="element-item col-12 col-md-6 col-lg-4 mx-auto my-3 doughnut">
+                        <div class="card single-item">
+                            <div class="img-container">
+                                <a href="product-details.html">
+                                    <img src="images/doughnut-3.jpg" class="card-img-top store-img" alt="">
+                                </a>
+                                <span class="store-item-icon">
+                                    <i class="fas fa-shopping-cart"></i>
+                                </span>
+                            </div>
+                            <div class="card-body">
+                                <div class="card-text text-capitalize d-flex justify-content-between">
+                                    <h5 class="store-item-name">doughnut item</h5>
+                                    <h5 class="store-item-value">$ <strong id="store-item-price" class="font-weight-bold">15</strong></h5>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--end of single items-->      
+                </div>
+            </div>              
+        </div> 
+        <!--end of store items-->
+    </div>
+</section>
+<!--end of store section-->
+<!--service section-->
+<section class="services py-5" id="services">
+    <div class="container">
+        <div class="row">
+            <!--single service-->
+            <div class="col-md-4 text-center my-3">
+                <!-- 
+                    https://www.iconfinder.com/icons/63108/choco_cocos_cupcake_icon
+                -->
+                <img src="images/cupcake.png" alt="cupcake-icon">
+                <h6 class="text-uppercase my-3 service-title">cupcake</h6>
+                <p class="text-left mx-auto w-75 service-text">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam illo eaque laboriosam nostrum doloribus ad libero distinctio, quas ratione eligendi.
+                </p>
+            </div>
+            <!--end of single service-->
+            <!--single service-->
+            <div class="col-md-4 text-center my-3">
+                <!-- 
+                    https://www.iconfinder.com/icons/2138191/baker_bakery_bread_dessert_food_icon
+                -->
+                <img src="images/bread.png" alt="bread-icon">
+                <h6 class="text-uppercase my-3 service-title">bread</h6>
+                <p class="text-left mx-auto w-75 service-text">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam illo eaque laboriosam nostrum doloribus ad libero distinctio, quas ratione eligendi.
+                </p>
+            </div>
+            <!--end of single service-->
+            <!--single service-->
+            <div class="col-md-4 text-center my-3">
+                <!-- 
+                    https://www.iconfinder.com/icons/3348/candy_icon
+                -->
+                <img src="images/candy.png" alt="candy-icon">
+                <h6 class="text-uppercase my-3 service-title">candy</h6>
+                <p class="text-left mx-auto w-75 service-text">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam illo eaque laboriosam nostrum doloribus ad libero distinctio, quas ratione eligendi.
+                </p>
+            </div>
+            <!--end of single service-->
+        </div>
+    </div>
+</section>
+<!--end of service section-->
+<!--order cake section-->
+<section class="cakes py-5" id="cakes">
+    <div class="container">
+        <!--section title-->
+        <div class="row">
+            <div class="col-10 text-center mx-auto col-md-6">
+                <h1 class="text-capitalize"> order <strong class="banner-title"> cake </strong></h1>
+            </div>
+        </div>
+        <!--end of section title-->
+        <div class="row">
+            <!--single cake-->
+            <div class="col-11 mx-auto col-md-6 col-lg-4 my-4 text-capitalize text-center px-4">
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item"><h3>birthday-cake</h3></li>
+                    <li class="list-group-item text-muted">birthday cake with a name</li>
+                    <li class="list-group-item text-muted">custom ingredients</li>
+                    <li class="list-group-item text-muted">custom size</li>
+                    <li class="list-group-item text-muted">custom design</li>
+                </ul>
+                <a href="order-form.html" class="btn btn-pink my-3">order now</a>
+                <p class="text-lowercase text-muted">starting at $5</p>
+                <img src="images/trans-1.png" class="img-fluid" alt="birthday-cake">
+            </div>
+            <!--end of single cake-->
+            <!--single cake-->
+            <div class="col-11 mx-auto col-md-6 col-lg-4 my-4 text-capitalize text-center px-4">
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item"><h3>custom-cake</h3></li>
+                    <li class="list-group-item text-muted">custom cake with a name</li>
+                    <li class="list-group-item text-muted">custom ingredients</li>
+                    <li class="list-group-item text-muted">custom size</li>
+                    <li class="list-group-item text-muted">custom design</li>
+                </ul>
+                <a href="order-form.html" class="btn btn-pink my-3">order now</a>
+                <p class="text-lowercase text-muted">starting at $5</p>
+                <img src="images/trans-2.png" class="img-fluid" alt="custom-cake">
+            </div>
+            <!--end of single cake-->
+            <!--single cake-->
+            <div class="col-11 mx-auto col-md-6 col-lg-4 my-4 text-capitalize text-center px-4">
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item"><h3>wedding-cake</h3></li>
+                    <li class="list-group-item  text-muted">wedding cake with a name</li>
+                    <li class="list-group-item text-muted">custom ingredients</li>
+                    <li class="list-group-item text-muted">custom size</li>
+                    <li class="list-group-item text-muted">custom design</li>
+                </ul>
+                <a href="order-form.html" class="btn btn-pink my-3">order now</a>
+                <p class="text-lowercase text-muted">starting at $5</p>
+                <img src="images/trans-3.png" class="img-fluid" alt="wedding-cake">
+            </div>
+            <!--end of single cake-->
+        </div>
+    </div>
+</section>
+<!--end of order cake section-->
+<!--blog section-->
+<section class="blog pb-5" id="blog">
+    <div class="container">
+        <!--section title-->
+        <div class="row">
+            <div class="col-10 text-center mx-auto col-md-6">
+                <h1 class="text-capitalize"> our <strong class="banner-title"> blog </strong></h1>
+            </div>
+        </div>
+        <!--end of section title-->
+        <div class="row">
+            <!--single blog-->
+            <div class="col-md-4 py-3">
+                <div class="card">
+                    <a href="blog.html">
+                        <div class="blog-img">
+                            <img src="images/cake-1.jpg" alt="" class="img-top img-fluid blog-image">
+                            <div class="blog-text text-center py-4">
+                                <h4 class="text-capitalize">blog-title</h4>
+                                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quibusdam, porro!</p>
+                                <div class="crumbs">
+                                    <nav aria-level="breadcrumb" class="breadcrumb-items">
+                                        <ol class="breadcrumb">
+                                            <li class="breadcrumb-item"><span id="date">june 18, 2020</apan></li>
+                                            <li class="breadcrumb-item"><span id="comments">comments</apan></li>
+                                        </ol>
+                                    </nav>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <!--end of single blog-->
+            <!--single blog-->
+            <div class="col-md-4 py-3">
+                <div class="card">
+                    <a href="blog.html">
+                        <div class="blog-img">
+                            <img src="images/sweet-1.jpg" alt="" class="img-top img-fluid blog-image">
+                            <div class="blog-text text-center py-4">
+                                <h5 class="text-capitalize">blog-title</h5>
+                                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quibusdam, porro!</p>
+                                <div class="crumbs">
+                                    <nav aria-level="breadcrumb" class="breadcrumb-items">
+                                        <ol class="breadcrumb">
+                                            <li class="breadcrumb-item"><span id="date">june 18, 2020</apan></li>
+                                            <li class="breadcrumb-item"><span id="comments">comments</apan></li>
+                                        </ol>
+                                    </nav>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <!--end of single blog-->
+            <!--single blog-->
+            <div class="col-md-4 py-3">
+                <div class="card">
+                    <a href="blog.html">
+                        <div class="blog-img">
+                            <img src="images/cupcake-1.jpg" alt="" class="img-top img-fluid blog-image">
+                            <div class="blog-text text-center py-4">
+                                <h5 class="text-capitalize">blog-title</h5>
+                                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quibusdam, porro!</p>
+                                <div class="crumbs">
+                                    <nav aria-level="breadcrumb" class="breadcrumb-items">
+                                        <ol class="breadcrumb">
+                                            <li class="breadcrumb-item"><span id="date">june 18, 2020</apan></li>
+                                            <li class="breadcrumb-item"><span id="comments">comments</apan></li>
+                                        </ol>
+                                    </nav>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <!--end of single blog-->
+        </div>
+    </div>
+</section>
+<!--end of blog section-->
+<!--contact section-->
+<section class="map py-2">
+    <div class="container">
+        <div class="row">
+            <!--section title-->
+            <div class="col-10 mx-auto d-flex justify-content-center align-items-center">
+                <h1 class="text-capitalize"> contact <strong class="banner-title"> us </strong></h1>
+            </div>
+            <!--end of section title-->
+        </div>
+        <div class="row">
+            <div class="col-md-12 col-sm-12">
+                <!--google map-->
+                <div class="embed-responsive embed-responsive-21by9">
+                    <iframe class="embed-responsive-item" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d233667.8223908687!2d90.27923710646989!3d23.780887457084543!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755b8b087026b81%3A0x8fa563bbdd5904c2!2sDhaka!5e0!3m2!1sen!2sbd!4v1588189120541!5m2!1sen!2sbd" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="contact py-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 col-md-4 col-sm-12 px-4 py-3">
+                <h4 class="text-capitalize text-pink px-4">contact form</h4>
+                <div class="card">
+                    <div class="card-body">
+                        <div class="form">
+                            <!--name-->
+                            <div class="form-group mb-0">
+                                <input type="text" class="form-control mb-2" placeholder="Enter your Name" id="name">
+                            </div>
+                            <!--email-->
+                            <div class="form-group mb-0">
+                                <input type="text" class="form-control mb-2" placeholder="Enter your E-mail" id="email">
+                            </div>
+                            <!--message-->
+                            <div class="form-group mb-0">
+                                <textarea name="message" class="form-control mb-2" placeholder="Your Message" id="message" rows="2"></textarea>
+                            </div>
+                            <!--send button-->
+                            <button type="submit" class="btn btn-pink btn-block text-uppercase">send</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-12 px-4 py-3">
+                <h4 class="text-capitalize text-pink px-4">how to find us</h4>
+                <!--contact info-->
+                <div class="contact-details px-4">
+                    <dl>
+                        <dt><h5 class="mt-3">cake shop</h5></dt>
+                        <dd>addresss : 123 main street, dhaka 1234</dd>
+                        <dd>phone : +11 123 456 789</dd>
+                        <dd>phone : +11 123 456 789</dd>
+                        <dd>email : mail@gmail.com</dd>
+                    </dl>
+                </div>
+                <div class="d-flex justify-content-around">
+                    <a href="#" class="contact-icon">
+                        <i class="fab fa-facebook"></i>
+                    </a>
+                    <a href="#" class="contact-icon">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="#" class="contact-icon">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="#" class="contact-icon">
+                        <i class="fab fa-google-plus"></i>
+                    </a>
+                </div>
+                <!--end of contact info-->
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-12 px-4 py-3">
+                <h4 class="text-capitalize text-pink px-4">sign up now</h4>
+                <div class="card">
+                    <div class="card-body">
+                        <div class="form">
+                            <!--name-->
+                            <div class="form-group mb-0">
+                                <label for="name" class="text-capitalize mb-0">**name**</label>
+                                <input type="text" class="form-control mb-2" placeholder="Enter your Name" id="name">
+                            </div>
+                            <!--email-->
+                            <div class="form-group mb-0">
+                                <label for="email" class="text-capitalize mb-0">**email**</label>
+                                <input type="text" class="form-control mb-2" placeholder="Enter your E-mail" id="email">
+                            </div>
+                            <!--send button-->
+                            <button type="submit" class="btn btn-pink text-uppercase mt-3">sign up</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--end of contact section-->
+<!--footer-->
+<footer class="footer">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-8 mx-auto text-center">
+                <p class="mb-0 p-3 text-capitalize">all copyright reserved @2020.</p>
+            </div>
+        </div>
+    </div>
+</footer>
+<!--end of footer-->
+<!--jquery-->
+<script src="js/jquery-3.3.1.min.js"></script>
+<!--bootstrap js-->
+<script src="js/bootstrap.bundle.min.js"></script>
+<!--main js-->
+<script src="js/main.js"></script>
+<!--isotop filtering js-->
+<script src="js/isotope.min.js"></script>
+<script>
+    var $grid = $('.grid').isotope({
+      itemSelector: '.element-item',
+      layoutMode: 'fitRows'
+    });
+    var filterFns = {
+      numberGreaterThan50: function() {
+        var number = $(this).find('.number').text();
+        return parseInt( number, 10 ) > 50;
+      },
+      ium: function() {
+        var name = $(this).find('.name').text();
+        return name.match( /ium$/ );
+      }
+    };
+    $filters = $('#filters').on( 'click', 'button', function() {
+      var $this = $( this );
+      var filterValue;
+      if ( $this.is('.is-checked') ) {
+        filterValue = '*';
+      } else {
+        filterValue = $this.attr('data-filter');
+        $filters.find('.is-checked').removeClass('is-checked');
+      }
+      filterValue = filterFns[ filterValue ] || filterValue;
+      $grid.isotope({ filter: filterValue });
+    });
+</script>
+</body>
+</html>
